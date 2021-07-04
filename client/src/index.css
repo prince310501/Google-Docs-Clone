@@ -1,0 +1,148 @@
+*,*::before,*::after {
+  box-sizing:border-box;
+}
+
+body{
+  background-color: #f3f3f3;
+  margin:0
+}
+
+
+input:valid {
+  border-color: green;
+}
+
+.container .ql-editor{
+  width:8.5in;
+  min-height: 11in;
+  padding: 1in;
+  margin: 1rem;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+  background-color: white;
+}
+
+.container .ql-container.ql-snow{
+  border:none;
+  display: flex;
+  justify-content: center;
+
+}
+
+.container .ql-toolbar.ql-snow{
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top:0;
+  z-index: 1;
+  background-color: #f3f3f3;
+  border: none;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+
+}
+
+.docheading{
+  display: flex;
+  justify-content: center;
+  padding:10px;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+  max-width:11.5in;
+  margin: 0 auto 1rem;
+}
+
+.docbutton{
+  display: flex;
+  justify-content: space-between;
+  padding:1px;
+  /* box-shadow: 0 0 5px 0 rgba(0,0,0,0.5); */
+  max-width:11.5in;
+  margin: 0 auto 1rem;
+}
+
+
+@page{
+  margin:1in;
+}
+
+@media print{
+  body{
+    background-color: none;
+  }
+  .container .ql-editor{
+    width: 6.5in;
+    height: 9in;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    align-self: flex-start;
+  }
+  .container .ql-toolbar.ql-snow{
+    display: none;
+  }
+  .docheading,.docbutton{
+    display: none;
+  }
+}
+
+
+.footer-basic {
+  padding:40px 0;
+  background-color:#dde4e7;
+  color:#4b4c4d;
+  /* position:fixed; */
+  bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
