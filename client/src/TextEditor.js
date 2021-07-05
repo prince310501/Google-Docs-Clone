@@ -220,6 +220,28 @@ const TextEditor = (props) => {
                 })
             }
         }
+
+        if(canEdit===0){
+            var elem1=document.getElementById('collab')
+            elem1.addEventListener('click',()=>{
+                socket.emit('giveCollab')
+
+            })
+            socket.on('recieveCollab',(users)=>{
+                setCollaborators(users)
+            })
+            return ()=>{
+                elem1.removeEventListener('click',()=>{
+                    socket.emit('giveCollab')
+    
+                })
+
+                socket.off('recieveCollab',(users)=>{
+                    setCollaborators(users)
+                })
+            }
+
+        }
     },[socket,quill,canEdit])
 
     useEffect(()=>{
@@ -256,7 +278,7 @@ const TextEditor = (props) => {
     },[])
 
     const sharehandler=()=>{
-        if(doc===null)
+        if(doc===null || canEdit===null  || canEdit!==1)
             return
         alert(`Copy this link to give edit access - http://localhost:3000/documents/${doc._id}?sharing=${doc.editLink} \n\nCopy this link to give view access - http://localhost:3000/documents/${doc._id}?sharing=${doc.viewLink}`);
     }

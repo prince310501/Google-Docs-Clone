@@ -239,7 +239,7 @@ const Admin = (props) => {
         )}
 
         <div style={{ textAlign: "center" }} className="my-5">
-          <h1>Active Users</h1>
+          <h1>Top 3 Frequently Active Users </h1>
         </div>
         
         {activeUsers !== null && activeUsers.length === 0 && (
